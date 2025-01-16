@@ -95,3 +95,35 @@ ssh-keygen -t rsa -b 4096 -o -a 128 -C "e-mail"
 sudo cat /home/anderson/.ssh/id_rsa.pub
 ```
 
+# Docker WSL
+
+```bash
+sudo apt update && sudo apt upgrade
+sudo apt remove docker docker-engine docker.io containerd runc
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo update-alternatives --config iptables >> iptables-legacy
+sudo usermod -aG docker $USER
+sudo vim /etc/wsl.conf
+
+[boot]
+systemd=true
+
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+
+wsl --shutdown
+
+```
