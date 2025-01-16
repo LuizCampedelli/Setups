@@ -80,3 +80,18 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.
 sudo apt-get update
 sudo apt-get install helm
 ```
+
+# Github
+
+```bash
+git config --global user.name "nome"
+git config --global user.email "e-mail"
+```
+
+Public key
+
+```bash
+ssh-keygen -t rsa -b 4096 -o -a 128 -C "e-mail"
+sudo cat /home/anderson/.ssh/id_rsa.pub
+```
+
