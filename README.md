@@ -127,3 +127,10 @@ sudo systemctl enable containerd.service
 wsl --shutdown
 
 ```
+
+# Termium: Codeium in the Terminal(termonal code sugestions)
+
+```bash
+curl -L https://github.com/Exafunction/codeium/releases/download/termium-v0.2.0/install.sh | bash
+```
+
