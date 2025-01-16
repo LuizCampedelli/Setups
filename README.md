@@ -171,4 +171,11 @@ source ~/.bashrc
 cat ~/.bashrc
 ```
 
+# K9S
+
+```bash
+brew install derailed/k9s/k9s
+```
+
+
 
