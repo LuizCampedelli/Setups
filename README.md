@@ -134,3 +134,41 @@ wsl --shutdown
 curl -L https://github.com/Exafunction/codeium/releases/download/termium-v0.2.0/install.sh | bash
 ```
 
+# Terragrunt
+
+```bash
+brew install terragrunt
+terragrunt --version
+terragrunt --install-autocomplete
+
+wget https://github.com/gruntwork-io/terragrunt/releases/latest/download/terragrunt_linux_amd64
+mv terragrunt_linux_amd64 terragrunt
+chmod u+x terragrunt
+sudo mv terragrunt /usr/local/bin/terragrunt
+terragrunt --version
+terragrunt --install-autocomplete
+```
+
+# Brew
+
+```bash
+sudo apt-get install build-essential curl git
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> ~/.bashrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+brew --version
+brew doctor
+```
+
+# Bash Alias
+
+```bash
+echo "alias update='sudo apt update'
+alias upgrade='sudo apt upgrade -y'
+alias k='kubectl'
+alias t='terraform'" >> ~/.bashrc
+source ~/.bashrc
+cat ~/.bashrc
+```
+
+
